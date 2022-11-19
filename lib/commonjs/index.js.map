@@ -1,0 +1,1 @@
+{"version":3,"names":["StarRating"],"sources":["index.ts"],"sourcesContent":["import StarRating from \"./StarRating\";\nexport { default as StarRatingDisplay } from \"./StarRatingDisplay\";\n\nexport default StarRating;\n"],"mappings":";;;;;;;;;;;;;AAAA;;AACA;;;;eAEeA,mB"}

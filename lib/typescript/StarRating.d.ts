@@ -1,0 +1,31 @@
+import React from "react";
+import { StyleProp, ViewStyle } from "react-native";
+import { IconProps } from "./StarIcon";
+declare type AnimationConfig = {
+    easing?: (value: number) => number;
+    duration?: number;
+    delay?: number;
+    scale?: number;
+};
+declare type StarRatingProps = {
+    rating: number;
+    onChange: (rating: number) => void;
+    minRating?: number;
+    color?: string;
+    emptyColor?: string;
+    maxStars?: number;
+    starSize?: number;
+    enableHalfStar?: boolean;
+    enableSwiping?: boolean;
+    onRatingStart?: () => void;
+    onRatingEnd?: () => void;
+    style?: StyleProp<ViewStyle>;
+    starStyle?: StyleProp<ViewStyle>;
+    animationConfig?: AnimationConfig;
+    testID?: string;
+    starFull?: React.FC<IconProps>;
+    starHalf?: React.FC<IconProps>;
+    starBorder?: React.FC<IconProps>;
+};
+declare const StarRating: React.FC<StarRatingProps>;
+export default StarRating;
