@@ -2,7 +2,7 @@ import React from "react";
 import { I18nManager, ViewStyle } from "react-native";
 import Svg, { Path, Rect } from "react-native-svg";
 
-type IconProps = {
+export type IconProps = {
     size: number;
     color: string;
 };
@@ -49,9 +49,17 @@ const StarIcon = ({
     type,
     size,
     color,
-}: IconProps & { type: "full" | "half" | "empty" }) => {
+    starHalf = StarHalf,
+    starBorder = StarBorder,
+    starFull = StarFull,
+}: IconProps & {
+    type: "full" | "half" | "empty";
+    starHalf?: React.FC<IconProps>;
+    starBorder?: React.FC<IconProps>;
+    starFull?: React.FC<IconProps>;
+}) => {
     const Component =
-        type === "full" ? StarFull : type === "half" ? StarHalf : StarBorder;
+        type === "full" ? starFull : type === "half" ? starHalf : starBorder;
 
     return <Component size={size} color={color} />;
 };

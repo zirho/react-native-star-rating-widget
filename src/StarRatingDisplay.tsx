@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, StyleProp, ViewStyle } from "react-native";
-import StarIcon from "./StarIcon";
+import StarIcon, { IconProps } from "./StarIcon";
 import { getStars } from "./utils";
 
 type Props = {
@@ -13,6 +13,9 @@ type Props = {
     style?: StyleProp<ViewStyle>;
     starStyle?: StyleProp<ViewStyle>;
     testID?: string;
+    starFull?: React.FC<IconProps>;
+    starHalf?: React.FC<IconProps>;
+    starBorder?: React.FC<IconProps>;
 };
 
 const defaultColor = "#fdd835";
@@ -26,6 +29,9 @@ const StarRatingDisplay = ({
     style,
     starStyle,
     testID,
+    starFull,
+    starHalf,
+    starBorder,
 }: Props) => {
     return (
         <View style={[styles.starRating, style]} testID={testID}>
@@ -36,6 +42,9 @@ const StarRatingDisplay = ({
                             type={starType}
                             size={starSize}
                             color={starType === "empty" ? emptyColor : color}
+                            starFull={starFull}
+                            starHalf={starHalf}
+                            starBorder={starBorder}
                         />
                     </View>
                 );
